@@ -3,24 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4",
-    "@box/react-virtualized": "9.22.3-rc-box.6",
-    "draft-js": "0.10.5"
+    "box-typescript-sdk-gen": "^0.2.0",
+    "box-ui-elements": "^18.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-intl": "^6.6.1",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -33,5 +30,28 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "overrides": {
+    "draft-js": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-tether": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-beautiful-dnd": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-textarea-autosize": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
+  },
+  "devDependencies": {
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^9.3.0",
+    "web-vitals": "^3.5.1"
   }
 }
