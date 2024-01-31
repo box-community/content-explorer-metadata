@@ -66,7 +66,7 @@ function App() {
       });
       const metadata = await client.fileMetadata.getFileMetadataById(
         fileID,
-        'enterprise_946138757',
+        'enterprise_123456789',
         'metadatatemplate'
       );
       console.log(metadata)
