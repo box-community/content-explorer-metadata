@@ -21,7 +21,7 @@ function App() {
   
   // Define metadata source
   // Example: enterprise_123456789.metadatatemplate
-  const metadataSource = `enterprise_${EID}.${templateName}`
+  const metadataSource = `metadata.enterprise_${EID}.${templateName}`
 
   const metadataQuery = {
     from: metadataSource,
