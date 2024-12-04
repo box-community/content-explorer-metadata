@@ -21,7 +21,8 @@ function App() {
   
   // Define metadata source
   // Example: enterprise_123456789.metadatatemplate
-  const metadataSource = `metadata.enterprise_${EID}.${templateName}`
+  const metadataSource = `enterprise_${EID}.${templateName}`;
+  const metadataSourceFieldName = `metadata.${metadataSource}`;
 
   const metadataQuery = {
     from: metadataSource,
@@ -37,10 +38,10 @@ function App() {
 
     // Define which other metadata fields you'd like to display
     fields:[
-      `${metadataSource}.name`,
-      `${metadataSource}.last_contacted_at`,
-      `${metadataSource}.industry`,
-      `${metadataSource}.role`,
+      `${metadataSourceFieldName}.name`,
+      `${metadataSourceFieldName}.last_contacted_at`,
+      `${metadataSourceFieldName}.industry`,
+      `${metadataSourceFieldName}.role`,
     ]
   };
 
@@ -48,11 +49,11 @@ function App() {
   // The metadata fields/columns to view - must be valid field names from the metadata template
   const fieldsToShow = [
     // Determine if the user can edit the metadata directly from Content Explorer component
-    { key: `${metadataSource}.name`, canEdit: false },
+    { key: `${metadataSourceFieldName}.name`, canEdit: false },
     // Determine label alias on metadata column with displayName prop
-    { key: `${metadataSource}.industry`, canEdit: false, displayName: "alias" },
-    { key: `${metadataSource}.last_contacted_at`, canEdit: true },
-    { key: `${metadataSource}.role`, canEdit: true },
+    { key: `${metadataSourceFieldName}.industry`, canEdit: false, displayName: "alias" },
+    { key: `${metadataSourceFieldName}.last_contacted_at`, canEdit: true },
+    { key: `${metadataSourceFieldName}.role`, canEdit: true },
   ];
 
   const defaultView = "metadata"; // Required prop to paint the metadata view. If not provided, you'll get regular folder view.
